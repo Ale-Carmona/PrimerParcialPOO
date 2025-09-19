@@ -31,7 +31,7 @@ namespace PrimerParcialPOO
                         a.Eliminar();
                         break;
                     case 5:
-                        export.ExportarExcel();
+                        export.ExportarExcel(a.ObtenerLista());
                         break;
 
                     default:

@@ -98,5 +98,10 @@ namespace PrimerParcialPOO
                 Console.WriteLine("no se encontro esa marca");
             }
         }
+
+        public List<Celular> ObtenerLista()
+        {
+            return lista;
+        }
     }
 }

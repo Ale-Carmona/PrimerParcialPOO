@@ -12,16 +12,17 @@ namespace PrimerParcialPOO
         private List<Celular> lista = new List<Celular>();
         Celular c = new Celular();
 
-        public void ExportarExcel()
+        public void ExportarExcel(List<Celular> lista)
         {
             using (var workbook = new XLWorkbook())
             {
                 var worksheet = workbook.Worksheets.Add("Celulares");
                 string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Celulares.xlsx";
+
                 // Encabezados
                 worksheet.Cell(1, 1).Value = "Marca";
                 worksheet.Cell(1, 2).Value = "Modelo";
-                worksheet.Cell(1, 3).Value = "Alamcenamiento";
+                worksheet.Cell(1, 3).Value = "Almacenamiento";
                 worksheet.Cell(1, 4).Value = "RAM";
                 worksheet.Cell(1, 5).Value = "Precio";
 
@@ -36,8 +37,7 @@ namespace PrimerParcialPOO
                 }
 
                 workbook.SaveAs(ruta);
-
-                Console.WriteLine("guardado con exito");
+                Console.WriteLine("Guardado con éxito en el escritorio.");
             }
         }
     }
